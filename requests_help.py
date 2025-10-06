@@ -10,6 +10,7 @@ def html_request_with_cache(url: str,
                             cache_folder:
                             str=default_cache_folder,
                             **kwargs)->bytes:
+                              
     '''This function performs get requests to fetch the html data of the given url.
     It also stores the fetch ftml data in a subdirectory ("get_requests_cache" by default).
     Subsequent get requests of the same website are taken from the cache instead of doing a new get request.
@@ -104,8 +105,8 @@ def html_request_with_cache(url: str,
  
 
 def api_call_with_cache(url:str,
-                        params:dict[str, any]=None,
-                        headers:dict[str, any]=None,
+                        params:dict=None,
+                        headers:dict=None,
                         print_process: bool=False,
                         bypass_cache: bool=False,
                         cache_folder: str=default_cache_folder,
@@ -113,7 +114,7 @@ def api_call_with_cache(url:str,
     
     '''Function makes a get request call to an api. is the same call has already been made with the same parameters. Cached data is loaded instead. This can reduce the use of limited API calls during testing.
     
-    To eventually by pass the cache set the 'bypass_cache' flag to True.
+    You can eventually bypass the cache set the 'bypass_cache' flag to True.
 
     url(string):
     - Takes string of target URL
@@ -245,6 +246,7 @@ def api_call_with_cache(url:str,
 
 
     
+
 
 
 
