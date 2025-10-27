@@ -216,7 +216,7 @@ def api_call_with_cache(url:str,
     response = requests.get(url=url, params=params, headers=headers, **kwargs)
 
     if response.status_code != 200:
-        raise Exception(f"Request failed. HTTP error code: {no_cache_response.status_code}")
+        raise Exception(f"Request failed. HTTP error code: {response.status_code}")
     
     if print_process:
             print("API call successful.")
@@ -233,20 +233,3 @@ def api_call_with_cache(url:str,
             print(f"API call successful. Returning data from '{url}'.")
 
     return api_data
-
-
-    
-
-
-    
-
-    
-    
-
-
-
-    
-
-
-
-
