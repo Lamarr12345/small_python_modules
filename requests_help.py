@@ -99,7 +99,7 @@ def html_request_with_cache(url: str,
             print(f"'{url}' found in cache as '{cache_registry.get(url)}'.")
 
     if print_process:
-        print(f"Returning html content of '{cache_registry.get(url)}'")
+        print(f"Returning html content from '{cache_registry.get(url)}'")
 
     return open(cache_path.joinpath(cache_registry.get(url)),"rb")
  
@@ -230,7 +230,7 @@ def api_call_with_cache(url:str,
         json.dump(api_cache, file)
 
     if print_process:
-            print(f"API call successful. Returning data '{url}'.")
+            print(f"API call successful. Returning data from '{url}'.")
 
     return api_data
 
